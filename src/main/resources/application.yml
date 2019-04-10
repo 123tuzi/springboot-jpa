@@ -1,0 +1,26 @@
+#the first datasource
+spring:
+  datasource:
+    testdb:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql:///testdb?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: root
+#the second  datasource
+    testdb2:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql:///testdb2?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: root
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    database-platform: org.hibernate.dialect.MySQL5Dialect
